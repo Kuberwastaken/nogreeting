@@ -1,30 +1,73 @@
-# Greeting website generator
+<div align="center">
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+# NoGreeting
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/kuber-mehtas-projects/v0-greeting-website-generator)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/qFDD7oxul2h)
+### Imagine calling someone on the phone, going AMOGUS! then putting them on hold
 
-## Overview
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000)
+[![License](https://img.shields.io/badge/License-Apache%202.0-white.svg)](LICENSE)
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
 
-## Deployment
 
-Your project is live at:
+<img alt="image" src="public\assets\readme-embed.png" />
 
-**[https://vercel.com/kuber-mehtas-projects/v0-greeting-website-generator](https://vercel.com/kuber-mehtas-projects/v0-greeting-website-generator)**
 
-## Build your app
+</div>
 
-Continue building your app on:
+## What is this
 
-**[https://v0.app/chat/projects/qFDD7oxul2h](https://v0.app/chat/projects/qFDD7oxul2h)**
+A web app that generates custom pages with greetings, discouraging the use of certain greetings in messaging, promoting more direct and efficient communication.
 
-## How It Works
+picking up where nohello.net left off, if you see this website in someone's bio, expect to be ghosted if you just write [GREETING].
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Why does this exist
+
+<img alt="image" src="public\assets\this-exist.png" />
+
+yeah, that's pretty much the entire first inspiration
+
+**This project was ideated, developed and shipped in 29 minutes and 36 seconds**
+
+## Some cool features
+
+- **Custom Greeting Pages**: Generate personalized pages for any greeting you want to discourage
+
+- **Multi-language Support**: Available in 19 languages including English, Spanish, French, German, Chinese, and more
+
+- **Customizable Names**: Add sender and receiver names to make examples more personal
+
+- **Shareable URLs**: Create unique links that can be shared with friends and colleagues
+
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS for a clean, professional look
+
+
+
+## Supported Languages List
+
+The app supports 19 languages:
+
+- English (en)
+- Czech (cs)
+- German (de)
+- Spanish (es)
+- Persian (fa)
+- French (fr)
+- Hindi (hi)
+- Hebrew (he)
+- Indonesian (id)
+- Italian (it)
+- Polish (pl)
+- Portuguese (pt)
+- Brazilian Portuguese (pt-br)
+- Russian (ru)
+- Swedish (sv)
+- Turkish (tr)
+- Ukrainian (uk)
+- Vietnamese (vi)
+- Simplified Chinese (zh)
+
+## 📄 License
+
+This project is open source and available under the [Apache 2.0](LICENSE).
