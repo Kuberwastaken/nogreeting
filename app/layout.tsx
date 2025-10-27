@@ -16,7 +16,7 @@ const _merriweather = Merriweather({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nogreeting.kuber.studio"),
   title: {
-    default: "No Greeting - Stop saying just hello in chat",
+    default: "No Greeting - stop saying just [GREETING] in chat",
     template: "%s | No Greeting",
   },
   description:
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "No Greeting - Stop saying just hello in chat",
+    title: "No Greeting - stop saying just [GREETING] in chat",
     description: "Generate custom pages to politely ask people not to send just a greeting in chat. Inspired by nohello.net",
     url: "https://nogreeting.kuber.studio",
     siteName: "No Greeting",
@@ -74,14 +74,14 @@ export const metadata: Metadata = {
         url: "/embed-image.jpg",
         width: 1200,
         height: 630,
-        alt: "No Greeting - Stop saying just hello in chat",
+        alt: "No Greeting - stop saying just [GREETING] in chat",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "No Greeting - Stop saying just hello in chat",
+    title: "No Greeting - stop saying just [GREETING] in chat",
     description: "Generate custom pages to politely ask people not to send just a greeting in chat. Inspired by nohello.net",
     images: ["/embed-image.jpg"],
     creator: "@kuberwastaken",
