@@ -68,6 +68,13 @@ export interface Translation {
   tryPopular: string
   languageLabel: string
   etc: string
+  chatWaiting: string
+  chatQuestion: string
+  chatAnswer: string
+  chatGreetingQuestion: (greeting: string) => string
+  chatQuickAnswer: string
+  chatThanks: string
+  chatAcknowledge: string
 }
 
 export const translations: Record<string, Translation> = {
@@ -118,6 +125,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Try these popular greetings:",
     languageLabel: "Language (optional)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "what time was that thing again?",
+    chatAnswer: "oh - 3:30 mate",
+    chatGreetingQuestion: (greeting) => `${greeting}! What time was that thing?`,
+    chatQuickAnswer: "hey, 3:30",
+    chatThanks: "Ta - seeya then!",
+    chatAcknowledge: "👌 np",
   },
   cs: {
     tagline: "prosím neříkej jen {greeting} v chatu",
@@ -167,6 +181,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Vyzkoušejte tyto oblíbené pozdravy:",
     languageLabel: "Jazyk (volitelný)",
     etc: "atd.",
+    chatWaiting: "...?",
+    chatQuestion: "v kolik hodin to bylo?",
+    chatAnswer: "oh - 3:30 kámo",
+    chatGreetingQuestion: (greeting) => `${greeting}! V kolik hodin to bylo?`,
+    chatQuickAnswer: "ahoj, 3:30",
+    chatThanks: "Díky - uvidíme se!",
+    chatAcknowledge: "👌 v pohodě",
   },
   de: {
     tagline: "bitte sag nicht nur {greeting} im Chat",
@@ -217,6 +238,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Probiere diese beliebten Begrüßungen:",
     languageLabel: "Sprache (optional)",
     etc: "usw.",
+    chatWaiting: "...?",
+    chatQuestion: "um wie viel Uhr war das nochmal?",
+    chatAnswer: "oh - 3:30 Kumpel",
+    chatGreetingQuestion: (greeting) => `${greeting}! Um wie viel Uhr war das?`,
+    chatQuickAnswer: "hey, 3:30",
+    chatThanks: "Danke - bis dann!",
+    chatAcknowledge: "👌 kein Problem",
   },
   es: {
     tagline: "por favor no digas solo {greeting} en el chat",
@@ -233,7 +261,7 @@ export const translations: Record<string, Translation> = {
     gotASec: "¿Tienes un segundo?",
     justAskQuestion: "¡Solo haz la pregunta! 😫",
     ifBrusque: (greeting) =>
-      `Si sientes que es un poco brusco simplemente decir "${greeting}" y hacer la pregunta, aún puedes prefijar tu mensaje con tantas cortesías como consideres apropiadas.`,
+      `Si sientes que es a bit brusco, solo decir "${greeting}" y hacer la pregunta, aún puedes prefijar tu mensaje con tantas cortesías como consideres apropiadas.`,
     forExample: "Por ejemplo:",
     exampleLong: (greeting) =>
       `¡${greeting}! Espero que estés bien. Necesito la última presentación, cuando tengas un momento :)`,
@@ -266,6 +294,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Prueba estos saludos populares:",
     languageLabel: "Idioma (opcional)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "¿a qué hora era eso otra vez?",
+    chatAnswer: "oh - 3:30 amigo",
+    chatGreetingQuestion: (greeting) => `¡${greeting}! ¿A qué hora era eso?`,
+    chatQuickAnswer: "hey, 3:30",
+    chatThanks: "Gracias - ¡nos vemos!",
+    chatAcknowledge: "👌 de nada",
   },
   fa: {
     tagline: "لطفاً فقط {greeting} در چت نگو",
@@ -314,6 +349,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "این احوال‌پرسی‌های محبوب را امتحان کن:",
     languageLabel: "زبان (اختیاری)",
     etc: "و غیره.",
+    chatWaiting: "...؟",
+    chatQuestion: "اون چیز چه ساعتی بود؟",
+    chatAnswer: "اوه - ۳:۳۰ رفیق",
+    chatGreetingQuestion: (greeting) => `${greeting}! اون چیز چه ساعتی بود؟`,
+    chatQuickAnswer: "سلام، ۳:۳۰",
+    chatThanks: "ممنون - می‌بینمت!",
+    chatAcknowledge: "👌 مشکلی نیست",
   },
   fr: {
     tagline: "s'il vous plaît ne dites pas juste {greeting} dans le chat",
@@ -363,11 +405,18 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Essayez ces salutations populaires:",
     languageLabel: "Langue (facultatif)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "c'était à quelle heure déjà?",
+    chatAnswer: "oh - 3:30 mec",
+    chatGreetingQuestion: (greeting) => `${greeting}! C'était à quelle heure?`,
+    chatQuickAnswer: "salut, 3:30",
+    chatThanks: "Merci - à plus!",
+    chatAcknowledge: "👌 pas de souci",
   },
   hi: {
     tagline: " कृपया चैट में सिर्फ {greeting} न कहें",
     phoneAnalogy: "कल्पना करें कि किसी को फोन करके {greeting}! कहें और फिर उन्हें होल्ड पर रख दें... 🤦‍♀️",
-    dontDoThis: "ऐसा न करें",
+    dontDoThis: " ऐसा न करें",
     insteadTryThis: "इसके बजाय यह करें",
     noteText: (receiverName) =>
       `ध्यान दें कि कीथ को अपना जवाब कुछ मिनट पहले मिल सकता था और ${receiverName} को इंतजार नहीं करना पड़ता। वास्तव में, ${receiverName} तुरंत सवाल के बारे में सोचना शुरू कर सकते थे!`,
@@ -379,7 +428,7 @@ export const translations: Record<string, Translation> = {
     gotASec: "एक सेकंड है?",
     justAskQuestion: "बस सवाल पूछें! 😫",
     ifBrusque: (greeting) =>
-      `यदि आपको लगता है कि केवल "${greeting}" कहना और सवाल पूछना थोड़ा रूखा है, तो भी आप अपने संदेश को जितनी चाहें उतनी शिष्टाचार के साथ शुरू कर सकते हैं。`,
+      `यदि आपको लगता है कि केवल "${greeting}" कहना और सवाल पूछना थोड़ा रूखा है, तो भी आप अपने संदेश को जितनी चाहें उतनी शिष्टाचार के साथ शुरू कर सकते हैं।`,
     forExample: "उदाहरण के लिए:",
     exampleLong: (greeting) => `${greeting}! उम्मीद है आप ठीक होंगे। मुझे नवीनतम प्रस्तुति चाहिए, जब आपके पास समय हो :)`,
     exampleMedium: (greeting) => `${greeting}, क्या हाल है? और, क्या पता है वह कब तक है?`,
@@ -411,6 +460,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "इन लोकप्रिय अभिवादनों को आज़माएं:",
     languageLabel: "भाषा (वैकल्पिक)",
     etc: "आदि।",
+    chatWaiting: "...?",
+    chatQuestion: "वह चीज़ फिर से कितने बजे थी?",
+    chatAnswer: "ओह - 3:30 दोस्त",
+    chatGreetingQuestion: (greeting) => `${greeting}! वह चीज़ कितने बजे थी?`,
+    chatQuickAnswer: "अरे, 3:30",
+    chatThanks: "धन्यवाद - फिर मिलेंगे!",
+    chatAcknowledge: "👌 कोई बात नहीं",
   },
   he: {
     tagline: "בבקשה אל תגיד רק {greeting} בצ'אט",
@@ -459,6 +515,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "נסה את הברכות הפופולריות האלה:",
     languageLabel: "שפה (אופציונלי)",
     etc: "וכו'.",
+    chatWaiting: "...?",
+    chatQuestion: "באיזו שעה זה היה שוב?",
+    chatAnswer: "אה - 3:30 חבר",
+    chatGreetingQuestion: (greeting) => `${greeting}! באיזו שעה זה היה?`,
+    chatQuickAnswer: "היי, 3:30",
+    chatThanks: "תודה - נתראה!",
+    chatAcknowledge: "👌 אין בעיה",
   },
   id: {
     tagline: "tolong jangan hanya bilang {greeting} di chat",
@@ -508,6 +571,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Coba sapaan populer ini:",
     languageLabel: "Bahasa (opsional)",
     etc: "dll.",
+    chatWaiting: "...?",
+    chatQuestion: "jam berapa itu lagi?",
+    chatAnswer: "oh - 3:30 teman",
+    chatGreetingQuestion: (greeting) => `${greeting}! Jam berapa itu?`,
+    chatQuickAnswer: "hei, 3:30",
+    chatThanks: "Terima kasih - sampai jumpa!",
+    chatAcknowledge: "👌 tidak masalah",
   },
   it: {
     tagline: "per favore non dire solo {greeting} in chat",
@@ -531,7 +601,7 @@ export const translations: Record<string, Translation> = {
     exampleMedium: (greeting) => `${greeting}, come va? inoltre, hai idea di quando è dovuto?`,
     exampleShort: (greeting) => `${greeting}, se non sei occupato, potresti aggiornare quei NFR?`,
     asyncText: (greeting) =>
-      `Può sembrare banale, but making your question before getting that initial salutatory reply also allows for asynchronous communication. If the other party is away, and you leave before they come back, they can still answer your question, instead of just staring at a "${greeting}" and wondering what they missed.`,
+      `Può sembrare banale, ma asking your question before getting that initial salutatory reply also allows for asynchronous communication. If the other party is away, and you leave before they come back, they can still answer your question, instead of just staring at a "${greeting}" and wondering what they missed.`,
     everyoneHappy: "Quando fatto bene - tutti sono felici! 🎉",
     halfSerious: "Questo è solo mezzo serio 😬 quindi per favore non",
     madLink: "arrabbiarti",
@@ -557,6 +627,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Prova questi saluti popolari:",
     languageLabel: "Lingua (opzionale)",
     etc: "ecc.",
+    chatWaiting: "...?",
+    chatQuestion: "a che ora era quella cosa?",
+    chatAnswer: "oh - 3:30 amico",
+    chatGreetingQuestion: (greeting) => `${greeting}! A che ora era quella cosa?`,
+    chatQuickAnswer: "ehi, 3:30",
+    chatThanks: "Grazie - ci vediamo!",
+    chatAcknowledge: "👌 nessun problema",
   },
   pl: {
     tagline: "proszę nie mów tylko {greeting} na czacie",
@@ -606,6 +683,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Wypróbuj te popularne powitania:",
     languageLabel: "Język (opcjonalny)",
     etc: "itp.",
+    chatWaiting: "...?",
+    chatQuestion: "o której to było?",
+    chatAnswer: "oh - 3:30 kolego",
+    chatGreetingQuestion: (greeting) => `${greeting}! O której to było?`,
+    chatQuickAnswer: "cześć, 3:30",
+    chatThanks: "Dzięki - do zobaczenia!",
+    chatAcknowledge: "👌 nie ma sprawy",
   },
   pt: {
     tagline: "por favor não diga apenas {greeting} no chat",
@@ -627,9 +711,9 @@ export const translations: Record<string, Translation> = {
     exampleLong: (greeting) =>
       `${greeting}! Espero que estejas bem. Preciso da última apresentação, quando tiveres um momento :)`,
     exampleMedium: (greeting) => `${greeting}, o que se passa? também, tens ideia de quando é que isso é devido?`,
-    exampleShort: (greeting) => `${greeting}, se não estiveres ocupado, poderias atualizar esses NFRs?`,
+    exampleShort: (greeting) => `${greeting}, se não estiver ocupado, poderias atualizar esses NFRs?`,
     asyncText: (greeting) =>
-      `Pode parecer trivial, mas fazer sua pergunta antes de obter aquela resposta de saudação inicial também permite comunicação assíncrona. Se a outra parte estiver ausente e você sair antes de ela voltar, ela ainda pode responder sua pergunta, em vez de apenas olhar para um "${greeting}" e se perguntar o que perdeu.`,
+      `Pode parecer trivial, but making your question before getting that initial salutatory reply also allows for asynchronous communication. If the other party is away, and you leave before they come back, they can still answer your question, instead of just staring at a "${greeting}" and wondering what they missed.`,
     everyoneHappy: "Quando feito corretamente - todos ficam felizes! 🎉",
     halfSerious: "Isto é meio a sério 😬 então por favor não fiques",
     madLink: "zangado",
@@ -655,6 +739,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Experimenta estas saudações populares:",
     languageLabel: "Idioma (opcional)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "a que horas era aquilo?",
+    chatAnswer: "oh - 3:30 amigo",
+    chatGreetingQuestion: (greeting) => `${greeting}! A que horas era aquilo?`,
+    chatQuickAnswer: "olá, 3:30",
+    chatThanks: "Obrigado - até logo!",
+    chatAcknowledge: "👌 sem problema",
   },
   "pt-br": {
     tagline: "por favor não diga apenas {greeting} no chat",
@@ -678,7 +769,7 @@ export const translations: Record<string, Translation> = {
     exampleMedium: (greeting) => `${greeting}, e aí? também, você tem ideia de quando isso é devido?`,
     exampleShort: (greeting) => `${greeting}, se você não estiver ocupado, você poderia atualizar esses NFRs?`,
     asyncText: (greeting) =>
-      `Pode parecer trivial, mas fazer sua pergunta antes de obter aquela resposta de saudação inicial também permite comunicação assíncrona. Se a outra parte estiver ausente e você sair antes de ela voltar, ela ainda pode responder sua pergunta, em vez de apenas olhar para um "${greeting}" e se perguntar o que perdeu.`,
+      `Pode parecer trivial, but making your question before getting that initial salutatory reply also allows for asynchronous communication. If the other party is away, and you leave before they come back, they can still answer your question, instead of just staring at a "${greeting}" and wondering what they missed.`,
     everyoneHappy: "Quando feito corretamente - todos ficam felizes! 🎉",
     halfSerious: "Isso é meio sério 😬 então por favor não fique",
     madLink: "bravo",
@@ -704,6 +795,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Experimente essas saudações populares:",
     languageLabel: "Idioma (opcional)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "que horas era aquilo mesmo?",
+    chatAnswer: "ah - 3:30 cara",
+    chatGreetingQuestion: (greeting) => `${greeting}! Que horas era aquilo?`,
+    chatQuickAnswer: "oi, 3:30",
+    chatThanks: "Valeu - até mais!",
+    chatAcknowledge: "👌 de boa",
   },
   ru: {
     tagline: "пожалуйста, не говорите просто {greeting} в чате",
@@ -753,6 +851,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Попробуйте эти популярные приветствия:",
     languageLabel: "Язык (необязательно)",
     etc: "и т.д.",
+    chatWaiting: "...?",
+    chatQuestion: "во сколько это было?",
+    chatAnswer: "ох - 3:30 друг",
+    chatGreetingQuestion: (greeting) => `${greeting}! Во сколько это было?`,
+    chatQuickAnswer: "привет, 3:30",
+    chatThanks: "Спасибо - увидимся!",
+    chatAcknowledge: "👌 без проблем",
   },
   sv: {
     tagline: "snälla säg inte bara {greeting} i chatten",
@@ -802,6 +907,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Prova dessa populära hälsningar:",
     languageLabel: "Språk (valfritt)",
     etc: "etc.",
+    chatWaiting: "...?",
+    chatQuestion: "vilken tid var det igen?",
+    chatAnswer: "oh - 3:30 kompis",
+    chatGreetingQuestion: (greeting) => `${greeting}! Vilken tid var det?`,
+    chatQuickAnswer: "hej, 3:30",
+    chatThanks: "Tack - vi ses!",
+    chatAcknowledge: "👌 inga problem",
   },
   tr: {
     tagline: "lütfen sohbette sadece {greeting} demeyin",
@@ -850,6 +962,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Bu popüler selamlamaları deneyin:",
     languageLabel: "Dil (isteğe bağlı)",
     etc: "vb.",
+    chatWaiting: "...?",
+    chatQuestion: "o şey saat kaçtaydı?",
+    chatAnswer: "oh - 3:30 dostum",
+    chatGreetingQuestion: (greeting) => `${greeting}! O şey saat kaçtaydı?`,
+    chatQuickAnswer: "hey, 3:30",
+    chatThanks: "Teşekkürler - görüşürüz!",
+    chatAcknowledge: "👌 sorun değil",
   },
   uk: {
     tagline: "будь ласка, не кажіть просто {greeting} в чаті",
@@ -899,6 +1018,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Спробуйте ці популярні привітання:",
     languageLabel: "Мова (необов'язково)",
     etc: "і т.д.",
+    chatWaiting: "...?",
+    chatQuestion: "о котрій це було?",
+    chatAnswer: "ох - 3:30 друже",
+    chatGreetingQuestion: (greeting) => `${greeting}! О котрій це було?`,
+    chatQuickAnswer: "привіт, 3:30",
+    chatThanks: "Дякую - побачимось!",
+    chatAcknowledge: "👌 без проблем",
   },
   vi: {
     tagline: "vui lòng đừng chỉ nói {greeting} trong chat",
@@ -921,7 +1047,7 @@ export const translations: Record<string, Translation> = {
     exampleMedium: (greeting) => `${greeting}, có chuyện gì vậy? ngoài ra, bạn có biết khi nào nó đến hạn không?`,
     exampleShort: (greeting) => `${greeting}, nếu bạn không bận, bạn có thể cập nhật những NFR đó không?`,
     asyncText: (greeting) =>
-      `Có thể có vẻ tầm thường, nhưng việc hỏi câu hỏi của bạn trước khi nhận được câu trả lời chào hỏi ban đầu cũng cho phép giao tiếp không đồng bộ. Nếu bên kia vắng mặt và bạn rời đi trước khi họ quay lại, họ vẫn có thể trả lời câu hỏi của bạn, thay vì chỉ nhìn chằm chằm vào "${greeting}" và tự hỏi họ đã bỏ lỡ điều gì.`,
+      `Có thể có vẻ tầm thường, nhưng asking your question before getting that initial salutatory reply also allows for asynchronous communication. If the other party is away, and you leave before they come back, they can still answer your question, instead of just staring at a "${greeting}" and wondering what they missed.`,
     everyoneHappy: "Khi làm đúng - mọi người đều vui! 🎉",
     halfSerious: "Điều này chỉ nghiêm túc một nửa 😬 vì vậy xin đừng",
     madLink: "tức giận",
@@ -947,6 +1073,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "Thử những lời chào phổ biến này:",
     languageLabel: "Ngôn ngữ (tùy chọn)",
     etc: "v.v.",
+    chatWaiting: "...?",
+    chatQuestion: "mấy giờ cái đó nhỉ?",
+    chatAnswer: "ồ - 3:30 bạn",
+    chatGreetingQuestion: (greeting) => `${greeting}! Mấy giờ cái đó?`,
+    chatQuickAnswer: "chào, 3:30",
+    chatThanks: "Cảm ơn - hẹn gặp lại!",
+    chatAcknowledge: "👌 không sao",
   },
   zh: {
     tagline: "请不要在聊天中只说{greeting}",
@@ -974,7 +1107,7 @@ export const translations: Record<string, Translation> = {
     halfSerious: "这只是半开玩笑 😬 所以请不要",
     madLink: "生气",
     statusWarning: (greeting) =>
-      `话虽如此，如果你将此网站的URL用作某人的状态/简介，如果你只说"${greeting}！"，请准备好被忽略`,
+      `话虽如此，如果你将此网站的URL用作某人的状态/简介，请准备好被忽略，如果你只说"${greeting}！"`,
     createYourOwn: "在此创建你自己的",
     openSource: "开源于",
     anotherProject: "另一个",
@@ -995,6 +1128,13 @@ export const translations: Record<string, Translation> = {
     tryPopular: "试试这些流行的问候语：",
     languageLabel: "语言（可选）",
     etc: "等等。",
+    chatWaiting: "...？",
+    chatQuestion: "那个事情是几点来着？",
+    chatAnswer: "哦 - 3:30 朋友",
+    chatGreetingQuestion: (greeting) => `${greeting}！那个事情是几点？`,
+    chatQuickAnswer: "嘿，3:30",
+    chatThanks: "谢谢 - 回见！",
+    chatAcknowledge: "👌 没问题",
   },
 }
 

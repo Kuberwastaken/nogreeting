@@ -67,7 +67,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{receiverName}</span>
                   <span className="text-sm text-gray-500">2:19 PM</span>
                 </div>
-                <p>...?</p>
+                <p>{t.chatWaiting}</p>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">Keith</span>
                   <span className="text-sm text-gray-500">2:20 PM</span>
                 </div>
-                <p>what time was that thing again?</p>
+                <p>{t.chatQuestion}</p>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{receiverName}</span>
                   <span className="text-sm text-gray-500">2:20 PM</span>
                 </div>
-                <p>oh - 3:30 mate</p>
+                <p>{t.chatAnswer}</p>
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{senderName}</span>
                   <span className="text-sm text-gray-500">2:15 PM</span>
                 </div>
-                <p>{capitalizedGreeting}! What time was that thing?</p>
+                <p>{t.chatGreetingQuestion(capitalizedGreeting)}</p>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{receiverName}</span>
                   <span className="text-sm text-gray-500">2:15 PM</span>
                 </div>
-                <p>hey, 3:30</p>
+                <p>{t.chatQuickAnswer}</p>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{senderName}</span>
                   <span className="text-sm text-gray-500">2:15 PM</span>
                 </div>
-                <p>Ta - seeya then!</p>
+                <p>{t.chatThanks}</p>
               </div>
             </div>
 
@@ -174,7 +174,7 @@ export default async function GreetingPage({ params, searchParams }: PageProps) 
                   <span className="font-semibold">{receiverName}</span>
                   <span className="text-sm text-gray-500">2:16 PM</span>
                 </div>
-                <p>👌 np</p>
+                <p>{t.chatAcknowledge}</p>
               </div>
             </div>
           </div>
