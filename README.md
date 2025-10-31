@@ -64,6 +64,7 @@ The app supports 19 languages:
 - Russian (ru)
 - Swedish (sv)
 - Turkish (tr)
+- Thai (th)
 - Ukrainian (uk)
 - Vietnamese (vi)
 - Simplified Chinese (zh)
